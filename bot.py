@@ -22,8 +22,8 @@ def show_menu(update, context):
 def message_handler(update, context):
     Id = update.message.from_user.username
     message = update.message.text
-    update.message.reply_text(text=f"You have send '{message}'")#here update func shows new updates to the bot user
-    context.bot.send_message(chat_id=admin_id, text=f"{Id} sent you '{message}'")#here context shows bot users' actions to the bot's admin
+    update.message.reply_text(text=f"You have send '{message}'")#This code shows new updates to the bot user
+    context.bot.send_message(chat_id=admin_id, text=f"{Id} sent you '{message}'")#This code shows bot users' actions to the bot's admin
 
 def contact_handler(update, context):
     phone_num = update.message.contact.phone_number
