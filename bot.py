@@ -1,12 +1,12 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import ReplyKeyboardMarkup, KeyboardButton
-admin_id = 1911018009
+admin_id = YOUR ID
 def start_command(update, context):
     # print(update.message.text)
     # print(context.bot)
     # print(update.message.from_user.id)
     # update.message.reply_text("/start command has been submitted")
-    context.bot.send_message(chat_id="1911018009", text="You have submitted new /start command")
+    context.bot.send_message(chat_id=admin_id, text="You have submitted new /start command")
 
 def show_menu(update, context):
     buttons = [
@@ -20,10 +20,10 @@ def show_menu(update, context):
     )
 
 def message_handler(update, context):
-    Id = update.message.from_user.id
+    Id = update.message.from_user.username
     message = update.message.text
-    update.message.reply_text(text=f"You have send '{message}'")
-    context.bot.send_message(chat_id=admin_id, text=f"{Id} sent you '{message}'")
+    update.message.reply_text(text=f"You have send '{message}'")#here update func shows new updates to the bot user
+    context.bot.send_message(chat_id=admin_id, text=f"{Id} sent you '{message}'")#here context shows bot users' actions to the bot's admin
 
 def contact_handler(update, context):
     phone_num = update.message.contact.phone_number
@@ -38,7 +38,7 @@ def location_handler(update, context):
     context.bot.send_message(chat_id=admin_id, text=f"@{Id2} Sizga o'z lokatsiyasini yubordi")
 
 def main():
-    updater = Updater(token="5320352538:AAG8B14oSb8DeRsNkwzX-UUX1-a8cB8Lnhg")
+    updater = Updater(token="YOUR TOKEN")
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler('start', start_command))
     dispatcher.add_handler(CommandHandler('menu', show_menu))
