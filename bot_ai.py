@@ -4,10 +4,10 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import numpy as np
 import json
 import face_recognition
-admin_id = 1911018009
-token = "5320352538:AAG8B14oSb8DeRsNkwzX-UUX1-a8cB8Lnhg"
+admin_id = Your_id
+token = "Your token"
 
-with open('astrum.json') as json_file:
+with open('Your_json_file') as json_file:
     data = json.load(json_file)
 
 known_face_encodings = [np.asarray(i['encode']) for i in data]
