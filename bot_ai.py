@@ -1,5 +1,5 @@
 #In the beginning important libraries should be imported
-#Here I have imported libraries for telegram bot and also for connecting bot with OpenCV: numpy, json, face_recognition
+#Here I have imported libraries for telegram bot and also for connecting bot with json file: numpy, json, face_recognition
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import numpy as np
 import json
